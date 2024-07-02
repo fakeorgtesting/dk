@@ -29,3 +29,10 @@ jobs:
 
       - name: push changes
         run: git push origin master
+
+      - name: Push changes to fork
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/fakeorgtesting/dk.git
+          git push origin master
