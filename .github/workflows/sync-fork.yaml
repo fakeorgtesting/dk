@@ -28,8 +28,6 @@ jobs:
         run: git merge upstream/main --allow-unrelated-histories
 
       - name: push changes
-        env:
-          PAT: ${{ secrets.PAT }}
         run: |
-          git remote set-url origin https://${{ secrets.PAT }}@github.com/fakeorgtesting/dk.git
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/fakeorgtesting/dk.git
           git push origin master
