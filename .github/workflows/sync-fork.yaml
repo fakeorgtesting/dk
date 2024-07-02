@@ -28,9 +28,6 @@ jobs:
         run: git merge upstream/main --allow-unrelated-histories
 
       - name: push changes
-        run: git push origin master
-
-      - name: Push changes to fork
         env:
           PAT: ${{ secrets.PAT }}
         run: |
